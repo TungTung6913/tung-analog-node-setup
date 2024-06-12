@@ -1,2 +1,11 @@
-# tung-analog-node-setup
-an easy one button script to run a Analog Node
+# Analog Node Setup Script
+
+This repository contains a script to easily set up an Analog node.
+
+## Prerequisites
+
+Before running the script, make sure you have `git` installed. You can install it using:
+
+```bash
+sudo apt install git
+
