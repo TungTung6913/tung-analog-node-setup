@@ -3,6 +3,10 @@
 This repository contains a script to easily set up an Analog node. The script checks for and installs necessary dependencies like Docker and websocat if they are not already installed. If these dependencies are already present, the script will skip their installation and proceed directly to setting up the Analog node.
 
 ## Prerequisites
+1. Hardware: 8 vCPUs (c6i.xlarge), 16 GB (c6i.xlarge), and at least 300 GB storage (NVMe SSD).
+2. Network: Port 9944.
+3. Network speed: At least 500 MBps.
+4. OS: The Timechain Node has been developed and tested on x86_64 architecture. This guide will assume you’re using Ubuntu versions 18.04, 20.04, or 22.04.
 
 Before running the script, make sure you have `git` installed. This is necessary to clone the repository.
 
