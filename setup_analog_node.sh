@@ -43,9 +43,19 @@ websocat --version
 docker pull analoglabs/timechain
 docker run -d -p 9944:9944 -p 30403:30303 analoglabs/timechain --base-path /data --rpc-external --rpc-methods=Unsafe --unsafe-rpc-external --name "$NODE_NAME"
 
+# Wait for the node to start
+echo "Waiting for the node to start..."
+sleep 10
+
 # Create session key and capture the output
 SESSION_KEY=$(echo '{"id":1,"jsonrpc":"2.0","method":"author_rotateKeys","params":[]}' | websocat -n1 -B 99999999 ws://127.0.0.1:9944)
 
-echo "Session key created: $SESSION_KEY"
+# Check if the session key was generated successfully
+if [ -z "$SESSION_KEY" ]; then
+  echo "Failed to generate session key. Please check the node status and try again."
+else
+  echo "Session key created: $SESSION_KEY"
+fi
+
 echo "Analog node setup is complete."
 
