@@ -65,6 +65,6 @@ You will see your `SESSION KEY` in the end. Please save it for register node at 
 ### Check The Log
 ```bash
 docker logs <docker id>
-
+```
 
 
